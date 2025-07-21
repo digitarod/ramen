@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>麺一 - こだわりの一杯をあなたに</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">麺一</h1>
+            <nav>
+                <ul>
+                    <li><a href="#commitment">こだわり</a></li>
+                    <li><a href="#menu">お品書き</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="carousel-container">
+            <div class="carousel-slide active" style="background-image: url('image/hero-chef.png');"></div>
+            <div class="carousel-slide" style="background-image: url('image/hero-ramen.png');"></div>
+            <div class="carousel-slide" style="background-image: url('image/hero-ramen2.png');"></div>
+        </div>
+        <div class="hero-text">
+            <h2>魂を込めた一杯</h2>
+            <p>店主の情熱とこだわりが詰まった、最高のラーメンをあなたに。</p>
+        </div>
+    </section>
+
+    <section id="commitment" class="commitment">
+        <div class="container">
+            <h2 class="section-title">麺一のこだわり</h2>
+            <div class="commitment-item">
+                <img src="image/noodles.png" alt="こだわりの麺">
+                <div class="commitment-text">
+                    <h3>麺へのこだわり</h3>
+                    <p>毎朝、店主が丹精込めて打つ自家製麺。国産小麦を独自にブレンドし、絶妙な加水率で仕上げることで、スープによく絡む、しなやかでコシのある食感をお楽しみいただけます。</p>
+                </div>
+            </div>
+            <div class="commitment-item reverse">
+                <img src="image/soup.png" alt="秘伝のスープ">
+                <div class="commitment-text">
+                    <h3>スープへのこだわり</h3>
+                    <p>豚骨、鶏ガラ、そして香味野菜をじっくりと時間をかけて煮込んだ秘伝のスープ。素材の旨味を最大限に引き出し、あっさりとしていながらも深いコクのある味わいを実現しました。</p>
+                </div>
+            </div>
+            <div class="commitment-item">
+                <img src="image/chashu.png" alt="特製チャーシュー">
+                <div class="commitment-text">
+                    <h3>チャーシューへのこだわり</h3>
+                    <p>厳選した国産豚を、特製のタレでじっくりと煮込んだチャーシュー。口の中でとろけるような柔らかさと、噛むほどに広がる肉の旨味が、ラーメンの味を一層引き立てます。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2 class="section-title">お品書き</h2>
+            <div class="menu-category">
+                <h3>らーめん</h3>
+                <ul>
+                    <li>とんこつ醤油らーめん <span class="price">850円</span></li>
+                    <li>とんこつらーめん <span class="price">800円</span></li>
+                    <li>みそらーめん <span class="price">900円</span></li>
+                </ul>
+            </div>
+            <div class="menu-category">
+                <h3>サイドメニュー</h3>
+                <ul>
+                    <li>餃子 (5個) <span class="price">350円</span></li>
+                    <li>ライス <span class="price">150円</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">お問い合わせ</h2>
+            <p>ご意見・ご感想など、お気軽にお寄せください。</p>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="name">お名前</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">メールアドレス</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">お問い合わせ内容</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">送信</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 麺一. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const slides = document.querySelectorAll('.carousel-slide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        setInterval(nextSlide, 5000); // Change slide every 5 seconds
+
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>

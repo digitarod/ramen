@@ -1,0 +1,356 @@
+/* General Styles */
+body {
+    font-family: 'Noto Serif JP', serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+    line-height: 1.6;
+    background-color: #222; /* 重厚感のある背景色 */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 60px;
+    color: #eee; /* タイトル色を調整 */
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #d9534f;
+}
+
+/* Header */
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #d9534f;
+}
+
+/* Hero Section (Carousel) */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+.carousel-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.7);
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.hero-text h2 {
+    font-size: 4em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.hero-text p {
+    font-size: 1.5em;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+/* Commitment Section */
+.commitment {
+    padding: 80px 0;
+    background-color: #333; /* 重厚感のある背景色 */
+    color: #fff; /* テキスト色を調整 */
+}
+
+.commitment-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+    background-color: #444; /* アイテムの背景色を調整 */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+.commitment-item:last-child {
+    margin-bottom: 0;
+}
+
+.commitment-item img {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+}
+
+.commitment-item.reverse img {
+    order: 2;
+}
+
+.commitment-text {
+    width: 50%;
+    padding: 40px;
+}
+
+.commitment-item.reverse .commitment-text {
+    order: 1;
+}
+
+.commitment-text h3 {
+    font-size: 2em;
+    margin-top: 0;
+    color: #d9534f;
+    margin-bottom: 20px;
+}
+
+.commitment-text p {
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+/* Menu Section */
+.menu {
+    padding: 80px 0;
+    background-color: #2a2a2a;
+    color: #fff;
+    text-align: center;
+}
+
+.menu-category {
+    margin-bottom: 40px;
+}
+
+.menu-category h3 {
+    font-size: 2em;
+    color: #d9534f;
+    margin-bottom: 20px;
+}
+
+.menu-category ul {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.menu-category li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #444;
+    font-size: 1.2em;
+}
+
+.menu-category li:last-child {
+    border-bottom: none;
+}
+
+.menu-category .price {
+    font-weight: 700;
+    color: #d9534f;
+}
+
+/* Contact Section */
+.contact {
+    padding: 80px 0;
+    background-color: #2a2a2a; /* 重厚感のある背景色 */
+    text-align: center;
+    color: #fff; /* テキスト色を調整 */
+}
+
+.contact p {
+    font-size: 1.1em;
+    margin-bottom: 40px;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #3a3a3a; /* フォームの背景色を調整 */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: #ccc; /* ラベル色を調整 */
+}
+
+.form-group input,
+.form-group textarea {
+    width: calc(100% - 20px);
+    padding: 12px 10px;
+    border: 1px solid #555; /* ボーダー色を調整 */
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+    background-color: #4a4a4a; /* 入力フィールドの背景色を調整 */
+    color: #fff; /* 入力テキスト色を調整 */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #d9534f;
+    outline: none;
+}
+
+.btn {
+    background-color: #d9534f;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #c23b36;
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-text h2 {
+        font-size: 3em;
+    }
+
+    .hero-text p {
+        font-size: 1.2em;
+    }
+
+    .commitment-item {
+        flex-direction: column;
+    }
+
+    .commitment-item img,
+    .commitment-item .commitment-text {
+        width: 100%;
+    }
+
+    .commitment-item.reverse img {
+        order: 1;
+    }
+
+    .commitment-item.reverse .commitment-text {
+        order: 2;
+    }
+
+    .commitment-text {
+        padding: 30px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    header .container {
+        flex-direction: column;
+    }
+}
